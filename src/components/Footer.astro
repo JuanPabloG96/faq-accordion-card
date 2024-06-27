@@ -1,0 +1,17 @@
+---
+interface Props {
+  profileName: string;
+  link: string;
+}
+
+const { profileName, link } = Astro.props;
+---
+
+<footer class="w-full text-center mt-auto p-5 bg-blue-950 text-slate-300">
+  <span>
+    Challenge by <a
+      href="https://www.frontendmentor.io?ref=challenge"
+      target="_blank" class="text-white font-bold">Frontend Mentor</a
+    >. Coded by <a href={link} class="text-white font-bold">{profileName}</a>.
+  </span>
+</footer>
