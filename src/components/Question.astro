@@ -1,0 +1,28 @@
+---
+export interface Props {
+  question: string;
+  answer: string;
+}
+
+const { question, answer } = Astro.props;
+
+// Utiliza una variable reactiva para manejar el estado del componente
+---
+
+<article>
+  <div class={"flex justify-between items-center cursor-pointer "} id="question" onclick="toggle()">
+    <h2>{question}</h2>
+    <img src="./images/icon-arrow-down.svg" alt="arrow down icon">
+  </div>
+  <p>{answer}</p>
+</article>
+
+<script>
+  let isOpen = false;
+  let fontWeight = "font-normal";
+
+  function toggle() {
+    isOpen = !isOpen;
+    fontWeight = isOpen ? "font-bold" : "font-normal";
+  }
+</script>

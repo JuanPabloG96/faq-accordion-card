@@ -1,0 +1,20 @@
+---
+import Question from './Question.astro';
+import data from '../json/faqs.json';
+
+const faqs = data.faqs;
+---
+
+<article class="w-[90%] mx-auto my-8 bg-white rounded-3xl p-5">
+  <img id="responsive-image"
+  src='images/illustration-woman-online-mobile.svg' alt="woman online illustration" width="250"
+  >
+  <section>
+    <h1>FAQ</h1>
+    {
+      faqs.map((faq: { question: string; answer: string; }) =>{
+        return <Question question={faq.question} answer={faq.answer} />
+      })
+    }
+  </section>
+</article>
